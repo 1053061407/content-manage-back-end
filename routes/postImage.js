@@ -8,7 +8,7 @@ router.post('/',function (req, res, next) {
   if(req.files) {
     res.json({
       files: {
-        path: '/public/img'+ filename
+        path: '/public/img/'+ filename
       }
     })
   }

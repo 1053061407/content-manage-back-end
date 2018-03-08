@@ -56,6 +56,7 @@ app.use(formidable({
 }))
 app.use('/post_img',postImage)
 
+
 // 设置静态文件目录
 app.use(express.static(path.join(__dirname, 'public')))
 // 设置模板目录

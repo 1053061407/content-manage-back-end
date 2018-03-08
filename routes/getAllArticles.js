@@ -1,4 +1,6 @@
 const express = require('express')
+const fs = require('fs')
+const path = require('path')
 const router = express.Router()
 const Article = require('../models/article')
 const articles = new Article()
@@ -110,5 +112,22 @@ router.get('/delete_article', function (req, res, next) {
       res.send('1')
     }
   })
+})
+
+router.get('/public/img/:id',function (req, res, next) {
+  var url = req.params.id;
+  console.log(url)
+  url = '../public/img/' + url
+  //设置请求的返回头type,content的type类型列表见上面
+  res.setHeader("Content-Type", 'image/jpeg');
+
+  var content =  fs.readFile(path.resolve(__dirname, url),(err, data) => {
+    if (err) {
+      throw err;
+    }
+    res.writeHead(200, "Ok");
+    res.write(data);
+    res.end();
+  });
 })
 module.exports = router
