@@ -1,6 +1,6 @@
 # content-manage-back-end
 ## 技术栈
-**mongodb + express **
+**mongodb + express**
 ## 介绍
 这是一个内容管理系统的node.js搭建的后台,数据库使用的是**mongodb**。该后台实现了加密登录，文件上传，显示图片至浏览器等功能。
 内容管理系统的前端请前往[内容管理系统](https://github.com/1053061407/content-manage-front-end)
